@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutina 4 Días</title>
+    <meta name="description" content="Rutina de gimnasio de 4 días enfocada en hipertrofia.">
+
+    <!-- Tipografía profesional: Inter (sans) + JetBrains Mono (numérica) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Firebase SDK (compat mode) -->
+    <script src="https://www.gstatic.com/firebasejs/12.14.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore-compat.js"></script>
+    <script>
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDUPJJI6Wizit5wV9ETopKmzWEkug1hZNg",
+            authDomain: "onyx-c705b.firebaseapp.com",
+            projectId: "onyx-c705b",
+            storageBucket: "onyx-c705b.firebasestorage.app",
+            messagingSenderId: "705868983420",
+            appId: "1:705868983420:web:84405a0f4d10ccfe5c2df9",
+            measurementId: "G-3VND18WPN0"
+        };
+        // Inicializar Firebase y Firestore (expuesto en window para app.js)
+        firebase.initializeApp(firebaseConfig);
+        window.fbDb = firebase.firestore();
+    </script>
+</head>
+<body>
+    <!-- Header con toggle de tema -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="brand">
+                <span class="brand-mark">R4</span>
+                <span class="brand-name">Rutina 4 Días</span>
+            </a>
+
+            <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema claro/oscuro">
+                <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                </svg>
+                <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <p class="eyebrow">Rutina Semanal · 4 días</p>
+                <h1>Rutina 4 Días</h1>
+                <p class="lead">
+                    Programa de entrenamiento enfocado en hipertrofia,
+                    con división de grupos musculares en cuatro sesiones semanales.
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Nivel</span>
+                        <span class="meta-value">Intermedio</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Frecuencia</span>
+                        <span class="meta-value">4 días / semana</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Objetivo</span>
+                        <span class="meta-value">Hipertrofia</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rutina -->
+        <section id="rutina" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <h2>La Rutina</h2>
+                    <p>Cuatro sesiones semanales. Descansa 60–90 s entre series.</p>
+                </header>
+
+                <!-- Día 1: Espalda - Hombros -->
+                <article class="day-card">
+                    <div class="day-head">
+                        <span class="day-tag">Día 1</span>
+                        <h3>Espalda — Hombros</h3>
+                    </div>
+                    <p class="warmup"><strong>Calentamiento:</strong> movilidad articular (hombro, codo, muñeca).</p>
+                    <ul class="exercise-list">
+                        <li class="exercise">
+                            <div class="ex-name">Remo gironda</div>
+                            <div class="ex-prescription"><span>3</span> × <span>15</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Jalón al Pecho (Agarre Neutro o cerrado)</div>
+                            <div class="ex-prescription"><span>3</span> × <span>12</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Remo con Mancuernas</div>
+                            <div class="ex-prescription"><span>3</span> × <span>12</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Remo T (Ir Variando Agarre)</div>
+                            <div class="ex-prescription"><span>3</span> × <span>10</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Press Militar con mancuernas</div>
+                            <div class="ex-prescription"><span>3</span> × <span>12</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Face Pull</div>
+                            <div class="ex-prescription"><span>2</span> × <span>15</span></div>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Día 2: Pecho - Brazos -->
+                <article class="day-card">
+                    <div class="day-head">
+                        <span class="day-tag">Día 2</span>
+                        <h3>Pecho — Brazos</h3>
+                    </div>
+                    <p class="warmup"><strong>Calentamiento:</strong> movilidad articular (hombro, codo, muñeca).</p>
+                    <ul class="exercise-list">
+                        <li class="exercise">
+                            <div class="ex-name">Press Inclinado con Mancuernas</div>
+                            <div class="ex-prescription"><span>4</span> × <span>10</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Peck Deck</div>
+                            <div class="ex-prescription"><span>3</span> × <span>10</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Cruces en Polea Baja</div>
+                            <div class="ex-prescription"><span>3</span> × <span>12</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Bíceps Martillo</div>
+                            <div class="ex-prescription"><span>3</span> × <span>10</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Tríceps Tras Nuca con mancuernas</div>
+                            <div class="ex-prescription"><span>3</span> × <span>12</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Puente / Plancha</div>
+                            <div class="ex-prescription"><span>4</span> × <span>20 s</span></div>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Día 3: Tren inferior -->
+                <article class="day-card">
+                    <div class="day-head">
+                        <span class="day-tag">Día 3</span>
+                        <h3>Tren Inferior</h3>
+                    </div>
+                    <p class="warmup"><strong>Calentamiento:</strong> movilidad articular (cadera, rodilla y tobillo).</p>
+                    <ul class="exercise-list">
+                        <li class="exercise">
+                            <div class="ex-name">Sentadilla en cajón con mancuernas</div>
+                            <div class="ex-prescription"><span>3</span> × <span>15</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Sillón de isquios</div>
+                            <div class="ex-prescription"><span>3</span> × <span>10</span> pesado</div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Prensa 45</div>
+                            <div class="ex-prescription"><span>3</span> × <span>12</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Sentadilla Goblet</div>
+                            <div class="ex-prescription"><span>3</span> × <span>10</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Gemelos en step con mancuernas</div>
+                            <div class="ex-prescription"><span>3</span> × <span>10</span></div>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Día 4: Tren superior -->
+                <article class="day-card">
+                    <div class="day-head">
+                        <span class="day-tag">Día 4</span>
+                        <h3>Tren Superior</h3>
+                    </div>
+                    <p class="warmup"><strong>Calentamiento:</strong> movilidad articular (cadera, rodilla y tobillo).</p>
+                    <ul class="exercise-list">
+                        <li class="exercise">
+                            <div class="ex-name">Press de Banca</div>
+                            <div class="ex-prescription"><span>4</span> × <span>10</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Remo Unilateral en Polea</div>
+                            <div class="ex-prescription"><span>3</span> × <span>12</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Flexión de brazo apoyado en banco</div>
+                            <div class="ex-prescription"><span>3</span> × <span>al fallo</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Remo Gironda</div>
+                            <div class="ex-prescription"><span>4</span> × <span>12 / lado</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Vuelos Laterales en Polea Baja</div>
+                            <div class="ex-prescription"><span>3</span> × <span>12</span></div>
+                        </li>
+                        <li class="exercise">
+                            <div class="ex-name">Bíceps en polea con Barra</div>
+                            <div class="ex-prescription"><span>4</span> × <span>10</span></div>
+                        </li>
+                    </ul>
+                    <p class="circuit"><strong>Circuito:</strong> 20 crunch abdominal + 10 elevaciones de piernas (repetir 2 veces).</p>
+                </article>
+            </div>
+        </section>
+        <!-- Progresión / Registro de pesos -->
+        <section id="progresion" class="section section-alt">
+            <div class="container">
+                <header class="section-head">
+                    <h2>Progresión</h2>
+                    <p>Registrá el peso usado en cada ejercicio para ver tu evolución a lo largo del tiempo.</p>
+                </header>
+
+                <div id="progress-app" class="progress-app" aria-live="polite">
+                    <!-- Lo renderiza app.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">Rutina 4 Días</p>
+            <p class="footer-meta">Rutina de hipertrofia · 4 días</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
